@@ -1,6 +1,6 @@
 LIBS=-lcppcms -lbooster
 
-all: clean uploader 
+all: clean uploader
 
 uploader: uploader.cpp view.cpp content.h
 	$(CXX) -Wall $(CXXFLAGS) uploader.cpp view.cpp -o uploader $(LIBS)
