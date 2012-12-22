@@ -6,9 +6,4 @@
 	"http" : {
 		"script" : "/uploader"
 	},
-	"file_server" : {
-		"enable" : true,
-		"listing" : true,
-		"document_root" : "."
-	},
 }

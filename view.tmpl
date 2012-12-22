@@ -4,13 +4,21 @@
 <% template render() %>
 <html>
    <body>
-    <!-- Specify enctype="multipart/form-data" to be able to upload files -->
-
-    <form method="post" action="" enctype="multipart/form-data" >
-    <% form as_p info %>
-    </form>
-   <p>Uploaded images</p>
-   <iframe src="/uploads/" width='800' height='300'></iframe>
+        <% if not empty callNumber %>
+            <h1>Fax Details</h1> 
+            <p>SenderId: <%= senderId %></p>
+            <p>Headline: <%= headLine %></p>
+            <p>Sendernumber: <%= senderNumber %></p>
+            <p>Callnumber: <%= callNumber %></p>
+            <p>ErrorCode gs call: <%= error_system %></p>
+            <p>ErrorCode rm call: <%= error_remove %></p>
+            <a href="/uploader">back to sending</a>
+        <% else %>
+            <!-- Specify enctype="multipart/form-data" to be able to upload files -->
+            <form method="post" action="" enctype="multipart/form-data" >
+            <% form as_p info %>
+            </form>
+    <% end %>
   </body>
 <html>
 <% end template %>
